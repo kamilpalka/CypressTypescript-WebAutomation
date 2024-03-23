@@ -12,4 +12,4 @@ class BookingPage {
   };
 }
 
-module.exports = new BookingPage();
+export default new BookingPage();

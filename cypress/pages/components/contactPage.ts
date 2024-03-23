@@ -34,4 +34,4 @@ class ContactPage {
   }
 }
 
-module.exports = new ContactPage();
+export default new ContactPage();

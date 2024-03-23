@@ -5,4 +5,4 @@ class MainPage {
   };
 }
 
-module.exports = new MainPage();
+export default new MainPage();
