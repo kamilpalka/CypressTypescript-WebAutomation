@@ -1,5 +1,3 @@
-import { MainPage } from "../pages/mainPage";
-
 describe("booking management", () => {
   it("should open and close booking calendar", () => {
     cy.visit("https://automationintesting.online/");
