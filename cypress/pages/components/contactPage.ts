@@ -7,6 +7,7 @@ class ContactPage {
     contactMessage: () => cy.get('[data-testid="ContactDescription"]'),
     contactSubmitBtn: () => cy.get("#submitContact"),
     contactAlert: () => cy.get("form > .alert"),
+    contactSend: () => cy.get(":nth-child(2) > div > h2"),
   };
 
   typeName(name) {
