@@ -1,6 +1,6 @@
 import ContactPage from "../../cypress/pages/components/contactPage";
 
-const tests = require("../../cypress/fixtures/contactTestScenarios.json");
+import * as tests from "../../cypress/fixtures/contactTestScenarios.json";
 
 describe("Contact section tests", () => {
   beforeEach(() => {
@@ -8,20 +8,32 @@ describe("Contact section tests", () => {
   });
 
   tests.forEach((test) => {
-    it(test.testName, () => {
-      ContactPage.typeName(test.name);
-      ContactPage.typeEmail(test.email);
-      ContactPage.typePhone(test.phone);
-      ContactPage.typeSubject(test.subject);
-      ContactPage.typeMessage(test.message);
+    const { testName, name, email, phone, subject, message, expected } = test;
+
+    it(testName, () => {
+      ContactPage.typeName(name);
+      ContactPage.typeEmail(email);
+      ContactPage.typePhone(phone);
+      ContactPage.typeSubject(subject);
+      ContactPage.typeMessage(message);
       ContactPage.clickSubmit();
 
-      if (test.testName === "should send contact message") {
-        ContactPage.elements.contactSend().should("have.text", test.expected);
-      } else {
+      if (testName === "should send contact message") {
+        ContactPage.elements.contactSend().should("have.text", expected);
+      } else if (testName === "should display all error messages") {
         ContactPage.elements
           .contactAlert()
-          .should("contain.text", test.expected);
+          .children()
+          .should("contain.text", expected)
+          .and("have.length", 9);
+      } else if (testName.includes("short") || testName.includes("long")) {
+        ContactPage.elements
+          .contactAlert()
+          .children()
+          .should("contain.text", expected)
+          .and("have.length", 1);
+      } else {
+        ContactPage.elements.contactAlert().should("contain.text", expected);
       }
     });
   });

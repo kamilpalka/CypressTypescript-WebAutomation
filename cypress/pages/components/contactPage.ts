@@ -10,24 +10,24 @@ class ContactPage {
     contactSend: () => cy.get(":nth-child(2) > div > h2"),
   };
 
-  typeName(name) {
+  typeName(name: string): void {
     this.elements.contactName().type(name);
   }
 
-  typeEmail(email) {
+  typeEmail(email: string) {
     this.elements.contactEmail().type(email);
   }
 
-  typePhone(phone) {
+  typePhone(phone: string) {
     this.elements.contactPhone().type(phone);
   }
 
-  typeSubject(subject) {
-    this.elements.contactSubject().type(subject);
+  typeSubject(subject: string) {
+    this.elements.contactSubject().type(subject, { delay: 0 });
   }
 
-  typeMessage(message) {
-    this.elements.contactMessage().type(message);
+  typeMessage(message: string) {
+    this.elements.contactMessage().type(message, { delay: 0 });
   }
 
   clickSubmit() {
