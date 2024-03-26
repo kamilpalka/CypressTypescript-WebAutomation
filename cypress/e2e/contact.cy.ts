@@ -2,7 +2,7 @@ import MainPage from "../pages/mainPage";
 
 import * as tests from "../../cypress/fixtures/contactTestScenarios.json";
 
-describe("Contact section tests", () => {
+describe("Contact section tests suite", () => {
   beforeEach(() => {
     cy.visit("/");
   });

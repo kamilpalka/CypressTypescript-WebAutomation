@@ -1,13 +1,17 @@
 class MainPage {
   elements = {
-    bookRoomBtn: () => cy.get(".openBooking"),
-    calendar: () => cy.get(".rbc-calendar"),
+    bookingRoomBtn: () => cy.get(".openBooking"),
+    bookingCalendar: () => cy.get(".rbc-calendar"),
     bookingFirstname: () => cy.get(".room-booking-form > .form-control"),
     bookingLastname: () => cy.get(".col-sm-4 > :nth-child(2) > .form-control"),
     bookingEmail: () => cy.get(".col-sm-4 > :nth-child(3) > .form-control"),
-    bookingBtn: () => cy.get(".btn-outline-primary"),
-    bookingCancelBtn: () => cy.get(".btn-outline-danger"),
+    bookingBookBtn: () => cy.get(".col-sm-4 > .btn-outline-primary"),
+    bookingCancelBtn: () => cy.get(".col-sm-4 > .btn-outline-danger"),
     bookingAlert: () => cy.get(".col-sm-4 > .alert"),
+    bookingCalendarBeginCell: () =>
+      cy.get(":nth-child(3) > .rbc-row-bg > :nth-child(1)"),
+    bookingCalendarEndCell: () =>
+      cy.get(":nth-child(3) > .rbc-row-bg > :nth-child(7)"),
     contactName: () => cy.get('[data-testid="ContactName"]'),
     contactEmail: () => cy.get('[data-testid="ContactEmail"]'),
     contactPhone: () => cy.get('[data-testid="ContactPhone"]'),
@@ -17,6 +21,18 @@ class MainPage {
     contactAlert: () => cy.get("form > .alert"),
     contactSend: () => cy.get(":nth-child(2) > div > h2"),
   };
+
+  clickBookRoomBtn() {
+    this.elements.bookingRoomBtn().click();
+  }
+
+  clickCancelBookingBtn() {
+    this.elements.bookingCancelBtn().click();
+  }
+
+  clickBookBtn() {
+    this.elements.bookingBookBtn().click();
+  }
 
   typeContactName(name: string): void {
     this.elements.contactName().type(name);
