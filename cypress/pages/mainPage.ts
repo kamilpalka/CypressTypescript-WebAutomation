@@ -8,10 +8,6 @@ class MainPage {
     bookingBookBtn: () => cy.get(".col-sm-4 > .btn-outline-primary"),
     bookingCancelBtn: () => cy.get(".col-sm-4 > .btn-outline-danger"),
     bookingAlert: () => cy.get(".col-sm-4 > .alert"),
-    bookingCalendarBeginCell: () =>
-      cy.get(":nth-child(3) > .rbc-row-bg > :nth-child(1)"),
-    bookingCalendarEndCell: () =>
-      cy.get(":nth-child(3) > .rbc-row-bg > :nth-child(7)"),
     contactName: () => cy.get('[data-testid="ContactName"]'),
     contactEmail: () => cy.get('[data-testid="ContactEmail"]'),
     contactPhone: () => cy.get('[data-testid="ContactPhone"]'),

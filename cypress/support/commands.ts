@@ -1,3 +1,6 @@
+import mainPage from "../pages/mainPage";
+import "@4tw/cypress-drag-drop";
+
 /// <reference types="cypress" />
 // ***********************************************
 // This example commands.ts shows you how to
@@ -35,3 +38,10 @@
 //     }
 //   }
 // }
+
+Cypress.Commands.add("selectOnCalendar", () => {
+  mainPage.clickBookRoomBtn();
+  cy.get(".rbc-button-link")
+    .contains("02")
+    .drag('.rbc-date-cell:not(".rbc-off-range"):nth(20)');
+});
