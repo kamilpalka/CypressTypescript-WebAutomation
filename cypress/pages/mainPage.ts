@@ -1,5 +1,13 @@
-class ContactPage {
+class MainPage {
   elements = {
+    bookRoomBtn: () => cy.get(".openBooking"),
+    calendar: () => cy.get(".rbc-calendar"),
+    bookingFirstname: () => cy.get(".room-booking-form > .form-control"),
+    bookingLastname: () => cy.get(".col-sm-4 > :nth-child(2) > .form-control"),
+    bookingEmail: () => cy.get(".col-sm-4 > :nth-child(3) > .form-control"),
+    bookingBtn: () => cy.get(".btn-outline-primary"),
+    bookingCancelBtn: () => cy.get(".btn-outline-danger"),
+    bookingAlert: () => cy.get(".col-sm-4 > .alert"),
     contactName: () => cy.get('[data-testid="ContactName"]'),
     contactEmail: () => cy.get('[data-testid="ContactEmail"]'),
     contactPhone: () => cy.get('[data-testid="ContactPhone"]'),
@@ -10,29 +18,29 @@ class ContactPage {
     contactSend: () => cy.get(":nth-child(2) > div > h2"),
   };
 
-  typeName(name: string): void {
+  typeContactName(name: string): void {
     this.elements.contactName().type(name);
   }
 
-  typeEmail(email: string) {
+  typeContactEmail(email: string) {
     this.elements.contactEmail().type(email);
   }
 
-  typePhone(phone: string) {
+  typeContactPhone(phone: string) {
     this.elements.contactPhone().type(phone);
   }
 
-  typeSubject(subject: string) {
+  typeContactSubject(subject: string) {
     this.elements.contactSubject().type(subject, { delay: 0 });
   }
 
-  typeMessage(message: string) {
+  typeContactMessage(message: string) {
     this.elements.contactMessage().type(message, { delay: 0 });
   }
 
-  clickSubmit() {
+  clickContactSubmit() {
     this.elements.contactSubmitBtn().click();
   }
 }
 
-export default new ContactPage();
+export default new MainPage();
