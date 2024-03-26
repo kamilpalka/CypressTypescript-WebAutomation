@@ -1,6 +1,6 @@
 class MainPage {
   elements = {
-    bookingRoomBtn: () => cy.get(".openBooking"),
+    bookingRoomBtn: () => cy.get(".openBooking").eq(0),
     bookingCalendar: () => cy.get(".rbc-calendar"),
     bookingFirstname: () => cy.get(".room-booking-form > .form-control"),
     bookingLastname: () => cy.get(".col-sm-4 > :nth-child(2) > .form-control"),
