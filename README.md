@@ -12,7 +12,7 @@ it uses various Cypress utility functions like: commands, fixtures, config urls
 
 The project is made in Page Object Model (POM) design pattern
 
-## requirements.
+## Requirements.
 1) Download and install Node.js LTS on your operating system
 2) Install dependencies in project main folder type in terminal: npm i
 
