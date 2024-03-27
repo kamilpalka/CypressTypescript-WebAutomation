@@ -95,4 +95,20 @@ describe("Booking section tests suite", () => {
           .should("contain.text", expected);
     });
   });
+
+  it("should successfully book a room", () => {
+    cy.goodBooking();
+    MainPage.elements.bookingSuccessful().should("be.visible");
+  });
+
+  it("should show room already booked at that date", () => {
+    cy.goodBooking();
+    MainPage.elements
+      .bookingAlert()
+      .children()
+      .should(
+        "contain.text",
+        "The room dates are either invalid or are already booked for one or more of the dates that you have selected."
+      );
+  });
 });

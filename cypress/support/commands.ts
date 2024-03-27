@@ -1,4 +1,4 @@
-import mainPage from "../pages/mainPage";
+import MainPage from "../pages/mainPage";
 import "@4tw/cypress-drag-drop";
 
 /// <reference types="cypress" />
@@ -40,8 +40,17 @@ import "@4tw/cypress-drag-drop";
 // }
 
 Cypress.Commands.add("selectOnCalendar", () => {
-  mainPage.clickBookRoomBtn();
+  MainPage.clickBookRoomBtn();
   cy.get(".rbc-button-link")
     .contains("02")
     .drag('.rbc-date-cell:not(".rbc-off-range"):nth(20)');
+});
+
+Cypress.Commands.add("goodBooking", () => {
+  cy.selectOnCalendar();
+  MainPage.typeBookingFirstName("Andrzej");
+  MainPage.typeBookingLastName("Godzion");
+  MainPage.typeBookingEmail("example@mail.com");
+  MainPage.typeBookingPhone("12345678901");
+  MainPage.clickBookBtn();
 });

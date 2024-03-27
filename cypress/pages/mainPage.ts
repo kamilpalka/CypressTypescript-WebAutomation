@@ -8,6 +8,7 @@ class MainPage {
     bookingPhone: () => cy.get(".col-sm-4 > :nth-child(4) > .form-control"),
     bookingBookBtn: () => cy.get(".col-sm-4 > .btn-outline-primary"),
     bookingCancelBtn: () => cy.get(".col-sm-4 > .btn-outline-danger"),
+    bookingSuccessful: () => cy.get(".ReactModal__Content"),
     calendarNextBtn: () =>
       cy.get(".rbc-toolbar > :nth-child(1) > :nth-child(3)"),
     calendarBackBtn: () =>
