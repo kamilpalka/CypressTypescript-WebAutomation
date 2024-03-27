@@ -5,6 +5,7 @@ class MainPage {
     bookingFirstname: () => cy.get(".room-booking-form > .form-control"),
     bookingLastname: () => cy.get(".col-sm-4 > :nth-child(2) > .form-control"),
     bookingEmail: () => cy.get(".col-sm-4 > :nth-child(3) > .form-control"),
+    bookingPhone: () => cy.get(".col-sm-4 > :nth-child(4) > .form-control"),
     bookingBookBtn: () => cy.get(".col-sm-4 > .btn-outline-primary"),
     bookingCancelBtn: () => cy.get(".col-sm-4 > .btn-outline-danger"),
     bookingAlert: () => cy.get(".col-sm-4 > .alert"),
@@ -28,6 +29,22 @@ class MainPage {
 
   clickBookBtn() {
     this.elements.bookingBookBtn().click();
+  }
+
+  typeBookingFirstName(firstName: string): void {
+    this.elements.bookingFirstname().type(firstName);
+  }
+
+  typeBookingLastName(lastName: string): void {
+    this.elements.bookingLastname().type(lastName);
+  }
+
+  typeBookingEmail(bookingEmail: string): void {
+    this.elements.bookingEmail().type(bookingEmail);
+  }
+
+  typeBookingPhone(bookingPhone: string): void {
+    this.elements.bookingPhone().type(bookingPhone);
   }
 
   typeContactName(name: string): void {
