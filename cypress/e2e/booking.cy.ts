@@ -67,7 +67,7 @@ describe("Booking section tests suite", () => {
     MainPage.elements
       .bookingAlert()
       .children()
-      .should("contain.text", "nie może mieć wartości nul")
+      .should("contain.text", "nie może mieć wartości null")
       .and("have.length", 2);
   });
 
