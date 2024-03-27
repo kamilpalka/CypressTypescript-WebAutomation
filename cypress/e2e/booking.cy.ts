@@ -18,6 +18,39 @@ describe("Booking section tests suite", () => {
     MainPage.elements.bookingCalendar().should("not.exist");
   });
 
+  it("should click Next button on calendar and change to next month", () => {
+    let oldtext: string;
+    MainPage.clickBookRoomBtn();
+    MainPage.elements.calendarMonth().then(($el) => (oldtext = $el.text()));
+    MainPage.clickCalendarNextBtn();
+    MainPage.elements
+      .calendarMonth()
+      .then(($el) => expect(oldtext).not.to.eq($el.text()));
+  });
+
+  it("should click Back button on calendar and change to previous month", () => {
+    let oldtext: string;
+    MainPage.clickBookRoomBtn();
+    MainPage.elements.calendarMonth().then(($el) => (oldtext = $el.text()));
+    MainPage.clickCalendarBackBtn();
+    MainPage.elements
+      .calendarMonth()
+      .then(($el) => expect(oldtext).not.to.eq($el.text()));
+  });
+
+  it("should click Today button and return to current month", () => {
+    let oldtext: string;
+    MainPage.clickBookRoomBtn();
+    MainPage.elements.calendarMonth().then(($el) => (oldtext = $el.text()));
+    MainPage.clickCalendarBackBtn();
+    MainPage.clickCalendarBackBtn();
+    MainPage.clickCalendarBackBtn();
+    MainPage.clickCalendarTodayBtn();
+    MainPage.elements
+      .calendarMonth()
+      .then(($el) => expect(oldtext).eq($el.text()));
+  });
+
   it("should display error booking message", () => {
     MainPage.clickBookRoomBtn();
     MainPage.clickBookBtn();

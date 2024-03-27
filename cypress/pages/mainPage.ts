@@ -8,6 +8,13 @@ class MainPage {
     bookingPhone: () => cy.get(".col-sm-4 > :nth-child(4) > .form-control"),
     bookingBookBtn: () => cy.get(".col-sm-4 > .btn-outline-primary"),
     bookingCancelBtn: () => cy.get(".col-sm-4 > .btn-outline-danger"),
+    calendarNextBtn: () =>
+      cy.get(".rbc-toolbar > :nth-child(1) > :nth-child(3)"),
+    calendarBackBtn: () =>
+      cy.get(".rbc-toolbar > :nth-child(1) > :nth-child(2)"),
+    calendarTodayBtn: () =>
+      cy.get(".rbc-toolbar > :nth-child(1) > :nth-child(1)"),
+    calendarMonth: () => cy.get(".rbc-toolbar-label"),
     bookingAlert: () => cy.get(".col-sm-4 > .alert"),
     contactName: () => cy.get('[data-testid="ContactName"]'),
     contactEmail: () => cy.get('[data-testid="ContactEmail"]'),
@@ -45,6 +52,16 @@ class MainPage {
 
   typeBookingPhone(bookingPhone: string): void {
     this.elements.bookingPhone().type(bookingPhone);
+  }
+
+  clickCalendarNextBtn() {
+    this.elements.calendarNextBtn().click();
+  }
+  clickCalendarBackBtn() {
+    this.elements.calendarBackBtn().click();
+  }
+  clickCalendarTodayBtn() {
+    this.elements.calendarTodayBtn().click();
   }
 
   typeContactName(name: string): void {
