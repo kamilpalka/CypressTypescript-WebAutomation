@@ -4,14 +4,16 @@
 
 
 ## Contents.
+This project delivers a test automation examples for web page: https://automationintesting.online/
+It'a an example of Cypress framework capabilities, it contains various add-on cypress libraries such as drag-drop, mochawesome-reporter
+it uses various Cypress utility functions like: commands, fixtures, config urls
+The project is made in Page Object Model (POM) design pattern
 
 ## requirements.
-
 1) Download and install Node.js LTS on your operating system
 2) Install dependencies in project main folder type in terminal: npm i
 
 ## How to run.
-
 To run in browser type "npx cypress open" it should open Cypress window
   
       choose E2E Testing and click on it
