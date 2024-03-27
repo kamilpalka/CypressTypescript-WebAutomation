@@ -1,6 +1,6 @@
 # Testing with Cypress and Typescript 
 ![gh1](https://github.com/kamilpalka/recruitmentCyTask/assets/49127696/960414cf-fcd0-439b-9e3e-c07227ee8d02)
-![gh1](https://github.com/kamilpalka/recruitmentCyTask/assets/49127696/c04d818f-b48d-4667-8565-4c1762629ebe)
+![gh2](https://github.com/kamilpalka/recruitmentCyTask/assets/49127696/60d82859-755d-49ed-a8e7-864e8530f92e)
 
 
 ## Contents.
