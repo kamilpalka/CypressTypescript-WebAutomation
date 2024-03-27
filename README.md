@@ -6,7 +6,7 @@
 ## Contents.
 This project delivers a test automation examples for web page: https://automationintesting.online/
 
-It'a an example of Cypress framework capabilities, it contains various add-on cypress libraries such as drag-drop, mochawesome-reporter
+It is an example of Cypress framework capabilities, it contains various add-on cypress libraries such as drag-drop, mochawesome-reporter
 
 it uses various Cypress utility functions like: commands, fixtures, config urls
 
